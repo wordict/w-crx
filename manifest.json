@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "wordict",
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "src/assets/wordict.png",
+      "32": "src/assets/wordict.png",
+      "48": "src/assets/wordict.png",
+      "128": "src/assets/wordict.png"
+    }
+  }
+}
