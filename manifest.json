@@ -5,10 +5,16 @@
   "action": {
     "default_popup": "index.html",
     "default_icon": {
-      "16": "src/assets/wordict.png",
-      "32": "src/assets/wordict.png",
-      "48": "src/assets/wordict.png",
-      "128": "src/assets/wordict.png"
+      "16": "src/assets/wd.png",
+      "32": "src/assets/wd.png",
+      "48": "src/assets/wd.png",
+      "128": "src/assets/wd.png"
     }
+  },
+  "icons": {
+    "16": "src/assets/wd.png",
+    "32": "src/assets/wd.png",
+    "48": "src/assets/wd.png",
+    "128": "src/assets/wd.png"
   }
 }
