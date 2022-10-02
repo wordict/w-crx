@@ -22,7 +22,9 @@ export class API {
     }
 
     async signUp (user) {
-        return await axios.post(this.withPath('/signup'), user).then(r => r.status)
+        return await axios.post(this.withPath('/signup'), user)
+                          .then(r => r.status)
+                          .catch(err => console.log(err))
     }
 }
 export default new API(API_URL)
