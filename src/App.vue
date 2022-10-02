@@ -1,15 +1,13 @@
 
 <template>
   <h1>WORDICT</h1>
-  <Signup/>
+  <router-view></router-view>
+
 </template>
 
 <script setup>
-import Signup from "./components/Signup.vue";
 
 </script>
-
-
 
 <style scoped>
 h1 {
