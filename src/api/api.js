@@ -20,11 +20,15 @@ export class API {
         }
         return `${this.URL}${path}`
     }
-
     async signUp (user) {
         return await axios.post(this.withPath('/signup'), user)
-                          .then(r => r.status)
-                          .catch(err => console.log(err))
+            .then(r => r.status)
+            .catch(err => console.log(err))
+    }
+    async signIn (user) {
+        return await axios.post(this.withPath('/signin'), user)
+            .then(r => r.status)
+            .catch(err => console.log(err))
     }
 }
 export default new API(API_URL)
