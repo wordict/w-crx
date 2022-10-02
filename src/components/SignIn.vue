@@ -8,16 +8,21 @@
       <label for="password">Password</label>
       <input v-model="passwordInp" id="password" type="password">
     </div>
-    <button id="signUpBtn" type="submit" @click="signUp">Sign Up</button>
+    <button class="signButton" id="signInButton" type="submit" @click="signIn">Sign In</button>
     <br>
-    <a href="">Do you have an account?</a>
+
+    <router-link to="/signup">
+      <a class="signupLink">
+        Don't you have an account?
+      </a>
+    </router-link>
   </div>
 </template>
 
 <script>
 import api from "../api/api.js"
 export default {
-  name: "Signup",
+  name: "SignIn",
   props: {
 
   },
@@ -28,27 +33,27 @@ export default {
     }
   },
   methods:{
-    signUp() {
-      api.signUp({ "email": this.emailInp, "password": this.passwordInp })
+    signIn() {
+      api.signIn({ "email": this.emailInp, "password": this.passwordInp })
     }
   }
 }
 </script>
 
-<style scoped>
+<style>
 .form {
   display: grid;
   margin: 10px;
 }
 
-label {
+.form label {
   text-align: left;
   margin-left: 10px;
   font-size: 16px;
   color: rgb(98, 89, 89);
   justify-content: flex-start;
 }
-input {
+.form input {
   height: 25px;
   width: 200px;
   margin: 5px;
@@ -57,7 +62,7 @@ input {
   color: black;
   box-shadow: 1px 1px 6px 1px rgba(0.15, 0.15, 0.15, 0.15);
 }
-#signUpBtn {
+.signButton {
   outline: none;
   font-size: 16px;
   color: white;
@@ -67,13 +72,13 @@ input {
   margin-top: 15px;
   margin-bottom: 10px;
 }
-#signUpBtn:active {
+.signButton:active {
   color: white;
   transform: translateY(2px);
   background-color: #1d3b58;
   box-shadow: 1px 1px 5px 1px rgb(29, 59, 88);
 }
-a{
+.signupLink{
   color: #2c5180;
 }
 </style>
