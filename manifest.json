@@ -2,6 +2,9 @@
   "manifest_version": 3,
   "name": "wordict",
   "version": "1.0.0",
+  "background": {
+    "service_worker": "src/background/index.js"
+  },
   "action": {
     "default_popup": "index.html",
     "default_icon": {
@@ -11,6 +14,11 @@
       "128": "src/assets/wd.png"
     }
   },
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "activeTab"
+  ],
   "icons": {
     "16": "src/assets/wd.png",
     "32": "src/assets/wd.png",
