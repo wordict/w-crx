@@ -10,7 +10,7 @@
       </div>
       <div class="form">
         <label for="password">Password</label>
-        <input v-model="secondPasswordInp" id="password" type="password">
+        <input v-model="secondPasswordInp" id="secondPassword" type="password">
       </div>
       <button class="signButton" id="signUpBtn" @click="signUp">Sign Up</button>
       <br>
