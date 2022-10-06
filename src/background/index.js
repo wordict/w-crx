@@ -1,7 +1,8 @@
+import axios from "axios";
 
 const contextMenus = [
-    { id: "addWithoutTrans", title: "Add without translation", contexts: ["selection", "page"] },
-    { id: "addWithTrans", title: "Add with translation", contexts: ["selection", "page"] },
+    { id: "addNewVocab", title: "Add new vocabulary", contexts: ["selection", "page"] },
+    { id: "addNewVocabWithTrans", title: "Add new vocabulary with translation", contexts: ["selection", "page"] },
 ]
 
 function createContextMenus(){
@@ -16,11 +17,16 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.onClicked.addListener(function(info, tab){
         console.log("info: ", info)
         console.log("tab: ", tab)
-
-        //the URL that will be added to based on the selection
-        let baseURL = "http://en.wikipedia.org/wiki/";
+        if (info.menuItemId === "addNewVocab" && !info.selectionText){
+            //  /vocabulary
+        }else if(info.menuItemId === "addNewVocab" && info.selectionText) {
+            axios.post('backend-url', { vocab : info.selectionText})
+                .then((r) => console.log(r.status))
+                .catch((e) => console.log(e))
+        }
+        const baseURL = "http://en.wikipedia.org/wiki/"
         const newURL = baseURL + info.selectionText;
-        //create the new URL in the user's browser
+
         chrome.tabs.create({ url: newURL });
     })
 
